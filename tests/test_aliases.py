@@ -37,10 +37,10 @@ def test_read_mfc_cstring_surrogate_pairs_and_unicode() -> None:
     assert end == len(raw_bytes)
 
 def test_decode_experimental_local_aliases_happy_path() -> None:
-    # Build synthetic operational map with OPCChannel and TypeOfPlc plus a custom alias
+    # Build synthetic operational map with Channel and Device plus a custom alias
     op_entries = [
-        ("OPCChannel", "MODBUS_TCP"),
-        ("TypeOfPlc", "PLC_01"),
+        ("Channel", "MODBUS_TCP"),
+        ("Device", "PLC_01"),
         ("PressureTag", "PIT_101"),
         ("Description", "Header Pressure"),
     ]
@@ -56,14 +56,14 @@ def test_decode_experimental_local_aliases_happy_path() -> None:
     local_evidence = result.object_local_sets[1].evidence
     aliases_by_name = {ev.alias_name: ev.raw_evidence for ev in local_evidence}
 
-    assert aliases_by_name["OPCChannel"] == "MODBUS_TCP"
-    assert aliases_by_name["TypeOfPlc"] == "PLC_01"
+    assert aliases_by_name["Channel"] == "MODBUS_TCP"
+    assert aliases_by_name["Device"] == "PLC_01"
     assert aliases_by_name["PressureTag"] == "PIT_101"
     assert aliases_by_name["Description"] == "Header Pressure"
 
 
 def test_decode_experimental_local_aliases_no_operational_map() -> None:
-    # Map without OPCChannel/TypeOfPlc should be rejected by the guard
+    # Map without Channel/Device should be rejected by the guard
     entries = [
         ("SomeRandomKey", "SomeVal"),
     ]

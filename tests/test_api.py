@@ -18,8 +18,8 @@ def test_parse_gdf_with_adapter_mock(tmp_path: Path) -> None:
     test_file.write_bytes(b"synthetic gdf container file")
 
     op_entries = [
-        ("OPCChannel", "MODBUS_TCP"),
-        ("TypeOfPlc", "PLC_01"),
+        ("Channel", "MODBUS_TCP"),
+        ("Device", "PLC_01"),
         ("Tag1", "VAL1"),
     ]
     contents_bytes = b"\x00\x00" + make_synthetic_alias_map(op_entries) + b"\x00\x00"

@@ -7,7 +7,7 @@ Neutral, read-only reverse-engineering parser and data recovery library for prop
 - **Standalone runtime**: Does not require GraphWorX32, COM interfaces, or Windows-specific runtime libraries to read files.
 - **OLE/CFBF traversal**: Bounded inspection of streams, storages, summary metadata, and defect reporting via `olefile`.
 - **Dual extraction profiles**:
-  - **Alias recovery profile**: Identifies Local Alias mappings (`OPCChannel`, `TypeOfPlc`, and custom aliases) and associated descriptions.
+  - **Alias recovery profile**: Identifies Local Alias mappings (e.g. communication channels, device identifiers, and custom object-level aliases) and associated descriptions.
   - **Screen display profile**: Recovers ObjectManager layers, dynamic objects (Hide/Size), and OPointManager data source expressions.
 - **Fail-safe boundaries**: Strict input size, recursion depth, string length, and entry limits to prevent unbounded memory allocation or denial-of-service on malformed files.
 - **Zero domain bias**: Does not generate Ignition tags, UDT instances, or plant-specific classifications. Emits neutral data structures suitable for any downstream migration pipeline.

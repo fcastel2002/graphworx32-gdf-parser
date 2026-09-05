@@ -30,7 +30,7 @@ from graphworx32_gdf_parser.models import (
 
 _EVIDENCE_ROOT_FIELDS = frozenset({"record_version", "disposition", "failed_criterion_ids", "promotion_predicates", "fixtures"})
 _EVIDENCE_FIXTURE_FIELDS = frozenset({"role", "evidence_id", "recipe_id", "runtime_class_id", "schema", "contents_sha256", "byte_size", "changed_spans", "unchanged_regions", "field_boundary", "payload_boundary", "repeatability_outcome", "control_outcome", "conclusion_outcome", "decoder_id"})
-_EVIDENCE_ROLES = frozenset({"one_object_baseline", "opcchannel_variant", "typeofplc_variant", "same_owner_description_variant", "unrelated_local_alias_variant", "two_object_collision", "global_alias_control", "repeated_saves"})
+_EVIDENCE_ROLES = frozenset({"one_object_baseline", "channel_variant", "device_variant", "same_owner_description_variant", "unrelated_local_alias_variant", "two_object_collision", "global_alias_control", "repeated_saves"})
 _PROMOTION_PREDICATES = frozenset({"baseline_change_isolated", "runtime_class_schema_observed", "independent_boundaries_proven", "repeatability_confirmed", "negative_control_confirmed", "evidence_basis_complete"})
 _STRUCTURAL_ID = re.compile(r"^[A-Z][A-Z0-9_]{2,63}$")
 _EVIDENCE_BLOCK = re.compile(r"```json\n(.*?)\n```", re.DOTALL)

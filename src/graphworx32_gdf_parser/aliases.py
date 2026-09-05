@@ -27,7 +27,7 @@ class _ExperimentalMap:
 
 
 _EXPERIMENTAL_DESCRIPTION_NAMES = frozenset({"Description", "Desc"})
-_EXPERIMENTAL_CONNECTION_NAMES = frozenset({"OPCChannel", "TypeOfPlc"})
+_EXPERIMENTAL_CONNECTION_NAMES = frozenset({"Channel", "Device"})
 
 
 def read_experimental_cstring(
@@ -165,7 +165,7 @@ def decode_experimental_local_aliases(contents: bytes, limits: ParseLimits) -> A
             if key in _EXPERIMENTAL_DESCRIPTION_NAMES:
                 description_candidates.append((key, value, value_span, primary_value or ""))
             else:
-                kind = "facility" if key == "OPCChannel" else "device" if key == "TypeOfPlc" else "local-alias"
+                kind = "facility" if key in {"Channel", "Facility"} else "device" if key in {"Device", "PLC", "Controller"} else "local-alias"
                 record = ObjectLocalEvidence(
                     parser_id,
                     classes[1].runtime_class,
