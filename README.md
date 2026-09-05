@@ -44,6 +44,6 @@ if result.document:
             print(f"Layer '{dyn_obj.layer_name}': {dyn_obj.object_name} -> {dyn_obj.data_source}")
 ```
 
-## License and Status
+## License
 
-**Notice**: License selection is currently pending project author confirmation. All rights reserved. Do not redistribute without explicit permission.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

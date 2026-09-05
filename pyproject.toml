@@ -6,6 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "graphworx32-gdf-parser"
 version = "0.1.0"
 description = "Neutral read-only GraphWorX32 .gdf (CFBF/MFC) parser and recovery library"
+license = { text = "MIT" }
+authors = [
+    { name = "Francisco Castel" }
+]
 requires-python = ">=3.12"
 dependencies = [
     "olefile>=0.46,<1.0",
