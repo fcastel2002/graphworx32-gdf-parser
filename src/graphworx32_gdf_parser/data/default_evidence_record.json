@@ -1,0 +1,28 @@
+{
+  "record_version": 1,
+  "disposition": "BLOCKED_EVIDENCE_REQUIRED",
+  "failed_criterion_ids": [
+    "runtime_class_schema_observed",
+    "independent_boundaries_proven",
+    "negative_control_confirmed",
+    "evidence_basis_complete"
+  ],
+  "promotion_predicates": [
+    {"id": "baseline_change_isolated", "result": true},
+    {"id": "runtime_class_schema_observed", "result": false},
+    {"id": "independent_boundaries_proven", "result": false},
+    {"id": "repeatability_confirmed", "result": true},
+    {"id": "negative_control_confirmed", "result": false},
+    {"id": "evidence_basis_complete", "result": false}
+  ],
+  "fixtures": [
+    {"role":"one_object_baseline","evidence_id":"E-02-BASELINE","recipe_id":"ONE_OBJECT_BASELINE","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"f1a529971d8d57151b4694a9358ecd6900ff4e7a7fb88b02c13d2c5b039372ee","byte_size":7677,"changed_spans":[],"unchanged_regions":[[0,7677]],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"CONFIRMED_BYTE_IDENTICAL","control_outcome":"BASELINE_OBSERVED","conclusion_outcome":"STRUCTURAL_OBSERVATION_RECORDED","decoder_id":"UNAVAILABLE"},
+    {"role":"opcchannel_variant","evidence_id":"E-02-OPCCHANNEL","recipe_id":"ONE_PROPERTY_VARIANT","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"3b794e5316930a5d602d31989b97496d3d394e57b9d8a9503f0768d80a68b03c","byte_size":7671,"changed_spans":[[2013,2014],[2022,2023],[2025,2027],[4276,4277],[4285,4286],[4288,4290],[4665,4666],[4674,4675],[4677,4679]],"unchanged_regions":[[0,2013]],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"CONFIRMED_BYTE_IDENTICAL","control_outcome":"LOCALIZED_ALIGNMENT_OBSERVED","conclusion_outcome":"PROMOTION_PENDING","decoder_id":"UNAVAILABLE"},
+    {"role":"typeofplc_variant","evidence_id":"E-02-TYPEOFPLC","recipe_id":"ONE_PROPERTY_VARIANT","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"593538d25e9a4bd654344df80347842fa82a7d07ad2b061907a0ae3473faa714","byte_size":7677,"changed_spans":[[2062,2063],[2068,2069],[4325,4326],[4331,4332],[4714,4715],[4720,4721]],"unchanged_regions":[[0,2062],[4721,7677]],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"CONFIRMED_BYTE_IDENTICAL","control_outcome":"ISOLATED_CHANGED_SPANS_OBSERVED","conclusion_outcome":"PROMOTION_PENDING","decoder_id":"UNAVAILABLE"},
+    {"role":"same_owner_description_variant","evidence_id":"E-02-DESCRIPTION","recipe_id":"SAME_OWNER_DESCRIPTION_VARIANT","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"56ee52329741d79eb520855a33ecb0a0a6e2527bd312c6f1f757f3e1e4987a65","byte_size":7677,"changed_spans":[[2345,2346],[2349,2350],[2363,2364],[2373,2374]],"unchanged_regions":[[0,2345],[2374,7677]],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"CONFIRMED_BYTE_IDENTICAL","control_outcome":"ISOLATED_CHANGED_SPANS_OBSERVED","conclusion_outcome":"PROMOTION_PENDING","decoder_id":"UNAVAILABLE"},
+    {"role":"unrelated_local_alias_variant","evidence_id":"E-02-UNRELATED","recipe_id":"UNRELATED_LOCAL_ALIAS_VARIANT","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"0000000000000000000000000000000000000000000000000000000000000000","byte_size":0,"changed_spans":[],"unchanged_regions":[],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"UNOBSERVED","control_outcome":"UNOBSERVED","conclusion_outcome":"UNOBSERVED","decoder_id":"UNAVAILABLE"},
+    {"role":"two_object_collision","evidence_id":"E-02-COLLISION","recipe_id":"TWO_OBJECT_COLLISION","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"0000000000000000000000000000000000000000000000000000000000000000","byte_size":0,"changed_spans":[],"unchanged_regions":[],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"UNOBSERVED","control_outcome":"UNOBSERVED","conclusion_outcome":"UNOBSERVED","decoder_id":"UNAVAILABLE"},
+    {"role":"global_alias_control","evidence_id":"E-02-GLOBAL","recipe_id":"GLOBAL_ALIAS_CONTROL","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"0000000000000000000000000000000000000000000000000000000000000000","byte_size":0,"changed_spans":[],"unchanged_regions":[],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"UNOBSERVED","control_outcome":"UNOBSERVED","conclusion_outcome":"UNOBSERVED","decoder_id":"UNAVAILABLE"},
+    {"role":"repeated_saves","evidence_id":"E-02-REPEAT","recipe_id":"REPEATED_SAVE_COMPARISON","runtime_class_id":"UNOBSERVED","schema":null,"contents_sha256":"0000000000000000000000000000000000000000000000000000000000000000","byte_size":0,"changed_spans":[],"unchanged_regions":[],"field_boundary":[0,0],"payload_boundary":[0,0],"repeatability_outcome":"UNOBSERVED","control_outcome":"UNOBSERVED","conclusion_outcome":"UNOBSERVED","decoder_id":"UNAVAILABLE"}
+  ]
+}

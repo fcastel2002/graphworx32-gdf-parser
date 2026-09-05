@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphworx32-gdf-parser"
+version = "0.1.0"
+description = "Neutral read-only GraphWorX32 .gdf (CFBF/MFC) parser and recovery library"
+requires-python = ">=3.12"
+dependencies = [
+    "olefile>=0.46,<1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+graphworx32_gdf_parser = ["data/*.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
