@@ -27,7 +27,6 @@ class _ExperimentalMap:
 
 
 _EXPERIMENTAL_DESCRIPTION_NAMES = frozenset({"Description", "Desc"})
-_EXPERIMENTAL_CONNECTION_NAMES = frozenset({"Channel", "Device"})
 
 
 def read_experimental_cstring(
@@ -122,12 +121,10 @@ def decode_experimental_local_aliases(contents: bytes, limits: ParseLimits) -> A
     description_maps: list[_ExperimentalMap] = []
     seen_operational: set[tuple[tuple[str, str], ...]] = set()
     for map_ in maps:
-        values = {key: value for key, _, value, _ in map_.entries}
-        # The connection pair is the structural guard for this experimental
-        # decoder. Unknown alias names are deliberately allowed only inside
-        # this already-recognised object-shaped map; accepting every string map
-        # would turn arbitrary metadata into tag candidates.
-        if _EXPERIMENTAL_CONNECTION_NAMES <= values.keys():
+        has_operational_entries = any(
+            key and key not in _EXPERIMENTAL_DESCRIPTION_NAMES for key, _, _, _ in map_.entries
+        )
+        if has_operational_entries:
             identity = tuple((key, value) for key, _, value, _ in map_.entries)
             if identity not in seen_operational:
                 seen_operational.add(identity)
@@ -152,9 +149,7 @@ def decode_experimental_local_aliases(contents: bytes, limits: ParseLimits) -> A
             (
                 entry
                 for entry in map_.entries
-                if entry[0]
-                and entry[0] not in _EXPERIMENTAL_CONNECTION_NAMES
-                and entry[0] not in _EXPERIMENTAL_DESCRIPTION_NAMES
+                if entry[0] and entry[0] not in _EXPERIMENTAL_DESCRIPTION_NAMES
             ),
             None,
         )
@@ -183,7 +178,7 @@ def decode_experimental_local_aliases(contents: bytes, limits: ParseLimits) -> A
                 identifiers = tuple(
                     (key, value)
                     for key, _, value, _ in description_map.entries
-                    if key and key not in _EXPERIMENTAL_DESCRIPTION_NAMES and key not in _EXPERIMENTAL_CONNECTION_NAMES
+                    if key and key not in _EXPERIMENTAL_DESCRIPTION_NAMES
                 )
                 matched = next(
                     ((key, value) for key, value in identifiers if _description_match_key(value) == primary_match_key),

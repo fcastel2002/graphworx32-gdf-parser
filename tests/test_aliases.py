@@ -63,9 +63,9 @@ def test_decode_experimental_local_aliases_happy_path() -> None:
 
 
 def test_decode_experimental_local_aliases_no_operational_map() -> None:
-    # Map without Channel/Device should be rejected by the guard
+    # Map with only description entries should not produce operational objects
     entries = [
-        ("SomeRandomKey", "SomeVal"),
+        ("Description", "Only description without operational aliases"),
     ]
     contents = b"\x00\x00" + make_synthetic_alias_map(entries)
     result = decode_experimental_local_aliases(contents, ParseLimits())
